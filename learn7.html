@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Professional Mastery | Engineering Portal</title>
+    <link rel="stylesheet" href="Assets/learn.css">
+    <style>
+        /* --- PROFESSIONAL TOOLKIT --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* Lighter Linear Gradient Background */
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .animate-header h1 {
+            font-size: 3rem;
+            color: #1a1a2e;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        /* --- CONTENT CARDS --- */
+        .content-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 6px solid #f8981d; /* Java Orange */
+            animation: fadeIn 1s ease-in;
+        }
+
+        h2 { color: #1a1a2e; margin-bottom: 15px; font-size: 1.8rem; }
+        .accent { color: #f8981d; font-weight: 800; }
+
+        /* --- CODE BLOCK STYLING (VS CODE THEME) --- */
+        .code-window {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            overflow-x: auto;
+            margin: 20px 0;
+            border-top: 30px solid #333;
+            position: relative;
+        }
+
+        .code-window::before {
+            content: "● ● ●";
+            position: absolute;
+            top: -25px;
+            left: 15px;
+            color: #ff5f56;
+            letter-spacing: 5px;
+            font-size: 12px;
+        }
+
+        /* --- RESPONSIVE IMAGES --- */
+        .unit-image-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* --- INTERACTIVE QUESTIONS --- */
+        .question-box { border-bottom: 1px solid #eee; }
+        .accordion {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            color: #333;
+        }
+
+        .panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #fdfdfd;
+        }
+
+        .major-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #f8981d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="animate-header">
+            <h1>Java Development Guide</h1>
+            <p><strong>Professional Programming & Architectural Standards</strong></p>
+        </header>
+
+        <section class="content-card">
+            <h2><span class="accent">01.</span> JVM Architecture & Memory Model</h2>
+            <p>Java's efficiency relies on the <strong>Java Virtual Machine (JVM)</strong>. Unlike compiled languages that target specific hardware, Java targets the JVM, making the code truly portable.</p>
+            
+            
+
+            <ul>
+                <li><strong>The Stack:</strong> Stores local variables and method call frames. Fast but limited in size.</li>
+                <li><strong>The Heap:</strong> Stores all objects and instance variables. This is where <strong>Garbage Collection</strong> occurs.</li>
+                <li><strong>JIT (Just-In-Time):</strong> Compiles "hot" code segments into machine code for near-native speeds.</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">02.</span> Advanced Abstraction & Interfaces</h2>
+            <p>In industrial Java, we code to <strong>interfaces</strong>, not implementations. This allows for modular, testable codebases.</p>
+
+            <div class="code-window">
+                <span style="color: #569cd6;">public interface</span> <span style="color: #4ec9b0;">CloudStorage</span> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #569cd6;">void</span> <span style="color: #dcdcaa;">uploadFile</span>(String path);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #569cd6;">byte</span>[] <span style="color: #dcdcaa;">downloadFile</span>(String id);<br>
+                }<br><br>
+
+                <span style="color: #569cd6;">public class</span> <span style="color: #4ec9b0;">S3Storage</span> <span style="color: #569cd6;">implements</span> <span style="color: #4ec9b0;">CloudStorage</span> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #dcdcaa;">@Override</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #569cd6;">public void</span> <span style="color: #dcdcaa;">uploadFile</span>(String path) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span style="color: #ce9178;">"Uploading to AWS S3..."</span>);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                }
+            </div>
+            
+            
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">03.</span> Concurrency & Multi-threading</h2>
+            <p>Java provides powerful primitives for parallel execution, essential for high-performance servers.</p>
+            
+            
+
+            <div class="code-window">
+                <span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">WorkerThread</span> <span style="color: #569cd6;">extends</span> <span style="color: #4ec9b0;">Thread</span> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #569cd6;">public void</span> <span style="color: #dcdcaa;">run</span>() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span style="color: #ce9178;">"Heavy Task Started by: "</span> + getName());<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                }<br><br>
+                <span style="color: #6a9955;">// Usage</span><br>
+                WorkerThread t1 = <span style="color: #569cd6;">new</span> WorkerThread();<br>
+                t1.start();
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">04.</span> Modern Data Processing (Streams)</h2>
+            <p>Java 8+ introduced Functional Programming. Use <strong>Streams</strong> to process data declaratively.</p>
+
+            <div class="code-window">
+                List&lt;String&gt; names = Arrays.asList(<span style="color: #ce9178;">"Alice"</span>, <span style="color: #ce9178;">"Bob"</span>, <span style="color: #ce9178;">"Charlie"</span>);<br>
+                <br>
+                <span style="color: #6a9955;">// Filter names starting with 'A' and print them</span><br>
+                names.stream()<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.filter(n -> n.startsWith(<span style="color: #ce9178;">"A"</span>))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.forEach(System.out::println);
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">05.</span> Essential Interview Preparation</h2>
+
+            <div class="question-box">
+                <button class="accordion">1. Difference between HashMap and ConcurrentHashMap? <span>+</span></button>
+                <div class="panel">
+                    <p><strong>HashMap</strong> is not thread-safe. <strong>ConcurrentHashMap</strong> allows multiple threads to read and write concurrently without locking the entire map, improving performance in multi-threaded environments.</p>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">2. What is the role of the 'volatile' keyword? <span>+</span></button>
+                <div class="panel">
+                    <p>The <code>volatile</code> keyword ensures that a variable's value is always read from and written to the <strong>Main Memory</strong>, preventing threads from caching local copies and ensuring visibility across cores.</p>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">3. Explain the Java Exception Hierarchy? <span>+</span></button>
+                <div class="panel">
+                    <p>All exceptions derive from <code>Throwable</code>. <code>Error</code> represents serious system problems (like OutOfMemory). <code>Exception</code> represents conditions a program should catch. <code>RuntimeException</code> represents coding errors (like NullPointer).</p>
+                    
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; padding: 20px;">
+            <a href="#" class="major-link">Download Full Java Documentation (PDF)</a>
+        </footer>
+    </div>
+
+    <script>
+        // Accordion Logic
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+    <style>
+        /* --- CONSISTENT THEME --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1050px; margin: 0 auto; padding: 50px 20px; }
+
+        .content-card {
+            background: white;
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            margin-bottom: 40px;
+            border-left: 8px solid #00b4d8; /* Enterprise Cyan */
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        h2 { color: #03045e; margin-bottom: 20px; font-size: 2rem; border-bottom: 2px solid #caf0f8; display: inline-block; padding-bottom: 5px; }
+        .accent { color: #00b4d8; font-weight: 900; }
+
+        /* --- ADVANCED CODE WINDOW --- */
+        .code-window {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            padding: 25px;
+            border-radius: 12px;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+            margin: 25px 0;
+            border-top: 35px solid #2d2d2d;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .code-window::before {
+            content: "Terminal — Java Advanced";
+            position: absolute;
+            top: -28px;
+            left: 15px;
+            color: #999;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        /* --- TECHNICAL HIGHLIGHTS --- */
+        .tech-badge {
+            background: #caf0f8;
+            color: #03045e;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        ul li { margin-bottom: 12px; list-style-type: none; position: relative; padding-left: 25px; }
+        ul li::before { content: '▹'; position: absolute; left: 0; color: #00b4d8; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 60px;">
+            <h1 style="font-size: 3rem; color: #03045e;">Advanced Java Engineering</h1>
+            <p style="color: #0077b6; font-size: 1.2rem;">Detailed Mastery of System-Level Concepts</p>
+        </header>
+
+        <section class="content-card">
+            <h2><span class="accent">08.</span> Runtime Introspection (Reflection API)</h2>
+            <p>Reflection allows a Java program to examine itself at runtime. This is the magic behind frameworks like <strong>Spring</strong> and <strong>Hibernate</strong>.</p>
+            
+            
+
+            <div class="code-window">
+                <span style="color: #6a9955;">// Inspecting a class at runtime</span><br>
+                Class&lt;?&gt; clazz = Class.forName(<span style="color: #ce9178;">"com.app.User"</span>);<br>
+                Method[] methods = clazz.getDeclaredMethods();<br>
+                <span style="color: #569cd6;">for</span> (Method m : methods) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span style="color: #ce9178;">"Method Name: "</span> + m.getName());<br>
+                }
+            </div>
+            <ul>
+                <li><span class="tech-badge">Usage</span> Bypassing access modifiers (private fields).</li>
+                <li><span class="tech-badge">Risk</span> Significant performance overhead and security vulnerabilities.</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">09.</span> Socket Programming & Networking</h2>
+            <p>Networking in Java is handled via <code>java.net</code>, enabling high-speed data transfer across the Internet.</p>
+
+            
+
+            <div class="code-window">
+                <span style="color: #6a9955;">// Simple TCP Server implementation</span><br>
+                ServerSocket server = <span style="color: #569cd6;">new</span> ServerSocket(<span style="color: #b5cea8;">8080</span>);<br>
+                Socket client = server.accept(); <span style="color: #6a9955;">// Wait for client connection</span><br>
+                PrintWriter out = <span style="color: #569cd6;">new</span> PrintWriter(client.getOutputStream(), <span style="color: #569cd6;">true</span>);<br>
+                out.println(<span style="color: #ce9178;">"Connected to Java Server v1.0"</span>);
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">10.</span> File I/O and High-Performance NIO.2</h2>
+            <p>Moving from traditional stream-based I/O to non-blocking systems for handling massive data files.</p>
+            <ul>
+                <li><strong>Byte vs Character:</strong> Use <code>BufferedInputStream</code> for binary and <code>BufferedReader</code> for text.</li>
+                <li><strong>NIO.2:</strong> Uses <code>Path</code> and <code>Files</code> API for atomic file operations.</li>
+            </ul>
+            <div class="code-window">
+                Path path = Paths.get(<span style="color: #ce9178;">"data/logs.txt"</span>);<br>
+                List&lt;String&gt; lines = Files.readAllLines(path); <span style="color: #6a9955;">// Modern NIO approach</span>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">11.</span> The JDBC Lifecycle</h2>
+            <p>JDBC provides a standard abstraction for interacting with SQL Databases like Oracle and MySQL.</p>
+            
+            
+
+            <ul>
+                <li><strong>Connection:</strong> Established via <code>DriverManager.getConnection()</code>.</li>
+                <li><strong>Statements:</strong> Use <code>PreparedStatement</code> to prevent <strong>SQL Injection</strong> attacks.</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">12.</span> Memory Engineering: Garbage Collection</h2>
+            <p>JVM divides memory into different generations to optimize the cleaning of unreachable objects.</p>
+
+            
+
+            <ul>
+                <li><strong>Eden Space:</strong> Where all new objects are born.</li>
+                <li><strong>Survivor Space:</strong> Objects that survive one GC cycle.</li>
+                <li><strong>Tenured Space:</strong> Long-lived objects moved from the Young Gen.</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">13.</span> Lambda Expressions & Functional Syntax</h2>
+            <p>Transforming Java into a functional-style language to handle big data sets cleanly.</p>
+            <div class="code-window">
+                <span style="color: #6a9955;">// Functional Interface Implementation</span><br>
+                BinaryOperator&lt;Integer&gt; add = (a, b) -> a + b;<br>
+                System.out.println(<span style="color: #ce9178;">"Sum: "</span> + add.apply(<span style="color: #b5cea8;">10</span>, <span style="color: #b5cea8;">20</span>));
+            </div>
+            <a href="index.html" class="major-link">← Return to Dashboard</a>
+        </section>
+
+        <footer style="text-align: center; margin-top: 50px; color: #0077b6;">
+            <p>&copy; 2026 Engineering Mastery Portal | Advanced Java Track</p>
+        </footer>
+
+    </div>
+    
+      
+</body>
+</html>

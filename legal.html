@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal & Policy</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: white;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    .section {
+      background: rgba(255,255,255,0.08);
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .section h2 {
+      margin-bottom: 10px;
+    }
+
+    .section p, .section ul {
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    .section:hover {
+      transform: scale(1.02);
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1 id="title">Legal & Policies</h1>
+
+  <div class="section">
+    <h2>Website Policy</h2>
+    <p>
+      This website is developed to provide educational resources such as question banks,
+      syllabus guidance, and structured answers. The content available on this platform is
+      for learning purposes only and should not be misused for any illegal activity.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Terms of Use</h2>
+    <ul>
+      <li>Users must use the website only for educational purposes.</li>
+      <li>Copying or redistributing content without permission is not allowed.</li>
+      <li>Any misuse of the platform may result in restricted access.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Intellectual Property</h2>
+    <p>
+      All content including design, text, and structure of this website belongs to the creators.
+      Unauthorized use, reproduction, or duplication is strictly prohibited.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Privacy Policy</h2>
+    <p>
+      We respect user privacy. This website does not collect personal information without user consent.
+      Any data collected will only be used to improve user experience.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Limitation of Liability</h2>
+    <p>
+      We do not guarantee 100% accuracy of the content. Users are advised to verify information
+      before relying on it for academic purposes.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Contact & Rights</h2>
+    <p>
+      For any legal concerns, content removal requests, or queries regarding policies,
+      users can contact the website administrators.
+    </p>
+  </div>
+
+  <footer>
+    © 2026 Your Project | All Rights Reserved
+  </footer>
+
+</div>
+
+<script>
+  const elements = document.querySelectorAll('h1, .section');
+
+  function animateOnLoad() {
+    elements.forEach((el, index) => {
+      setTimeout(() => {
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+        el.style.transition = "all 0.8s ease";
+      }, index * 200);
+    });
+  }
+
+  window.onload = animateOnLoad;
+</script>
+
+</body>
+</html>

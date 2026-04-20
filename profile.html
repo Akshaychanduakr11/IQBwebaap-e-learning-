@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile</title>
+  <link rel="stylesheet" href="assets/profile.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="profile-container">
+    <!-- Banner -->
+    <div class="profile-header">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80" alt="Banner" class="banner-img" id="bannerImg">
+      <input type="file" id="uploadBanner" accept="image/*" />
+
+      <div class="profile-pic-wrapper">
+        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?auto=format&fit=crop&w=400&q=80" alt="Profile Picture" class="profile-pic" id="profilePic">
+        <input type="file" id="uploadPic" accept="image/*" />
+      </div>
+    </div>
+
+    <!-- Profile Details -->
+    <div class="profile-details">
+      <h2 id="name">John Doe</h2>
+      <p id="headline">Full Stack Developer | UI/UX Enthusiast</p>
+
+      <div class="info-section">
+        <h3>Personal Information</h3>
+        <p id="dob">DOB: 2000-01-01</p>
+        <p id="contact">Contact: user@example.com | +91 9876543210</p>
+        <p id="location">Location: Mumbai, India</p>
+      </div>
+
+      <div class="info-section">
+        <h3>Education</h3>
+        <p id="education">Education: B.Tech in Computer Science, 3rd Year</p>
+        <p id="university">University: ABC University</p>
+      </div>
+
+      <div class="info-section">
+        <h3>Experience</h3>
+        <p id="experience">Experience: Intern at XYZ Pvt Ltd (6 Months)</p>
+      </div>
+
+      <div class="info-section">
+        <h3>Skills</h3>
+        <p id="skills">HTML, CSS, JavaScript, React, Node.js, MongoDB</p>
+      </div>
+
+      <div class="info-section">
+        <h3>Bio</h3>
+        <p id="bio">Passionate about building modern web apps and solving complex problems with creative coding.</p>
+      </div>
+
+      <div class="buttons">
+        <button id="editBtn">Edit Profile</button>
+        <button id="changeBanner">Change Banner</button>
+      </div>
+    </div>
+  </div>
+<!-- Firebase App (required) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+
+<!-- Firebase Firestore -->
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+<!-- Firebase Storage -->
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+
+  <script src="profile.js"></script>
+</body>
+</html>

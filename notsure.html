@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Not Sure Where to Begin?</title>
+  <link rel="stylesheet" href="Assets/notsure.css"/>
+</head>
+<body>
+<script>
+const user = localStorage.getItem("user");
+
+if (!user) {
+  window.location.href = "Signin.html";
+}
+</script>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Not Sure Where to Begin?</h1>
+      <p>Discover your perfect learning path. Let’s start your journey today.</p>
+      <button id="startBtn">Start Here</button>
+    </div>
+  </section>
+
+  <!-- Explore by Interest -->
+  <section class="interests" id="explore">
+    <h2>Explore by Interest</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://img.icons8.com/color/96/code.png" alt="Tech Icon" />
+        <h3>Technology & Coding</h3>
+        <p>Build apps, websites, and AI tools from scratch.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/color/96/design.png" alt="Design Icon" />
+        <h3>Design & Creativity</h3>
+        <p>Master design thinking, UX, and creative skills.</p>
+      </div>
+      <div class="card">
+                <img src="https://img.freepik.com/premium-vector/flat-style-background-business-handshake_1104738-186.jpg" alt="Business Icon" />
+        <h3>Business & Marketing</h3>
+        <p>Understand markets, branding, and entrepreneurship.</p>
+      </div>
+      <div class="card">  
+        <img src="https://img.icons8.com/color/96/language.png" alt="Language Icon" />
+        <h3>Language & Communication</h3>
+        <p>Learn new languages and express confidently.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learn by Platform -->
+  <section class="platforms">
+    <h2>Learn by Platform</h2>
+    <div class="platform-grid">
+      <a href="https://www.khanacademy.org" target="_blank" class="platform-card">Khan Academy</a>
+      <a href="https://www.coursera.org" target="_blank" class="platform-card">Coursera</a>
+      <a href="https://www.freecodecamp.org" target="_blank" class="platform-card">freeCodeCamp</a>
+      <a href="https://www.edx.org" target="_blank" class="platform-card">edX</a>
+      <a href="https://www.skillshare.com" target="_blank" class="platform-card">Skillshare</a>
+      <a href="https://www.duolingo.com" target="_blank" class="platform-card">Duolingo</a>
+      <a href="https://www.W3school.com" target="_blank" class="platform-card">W3school</a>
+      <a href="https://www.geeksforgeeks.org/" target="_blank" class="platform-card">GeeksforGeeks</a>
+    
+    </div>
+  </section>
+
+  <!-- Get Inspired -->
+  <section class="inspiration">
+    <h2>Get Inspired</h2>
+    <div class="quotes">
+      <blockquote>"I started learning with freeCodeCamp, and now I’m a full-stack developer!"</blockquote>
+      <blockquote>"Khan Academy helped me rebuild my confidence in math."</blockquote>
+      <blockquote>"Coursera gave me a world-class education right from my bedroom."</blockquote>
+    </div>
+  </section>
+
+  <!-- Custom Button Section (from your drawing) -->
+  <section class="custom-menu">
+    <div class="container">
+      <h2>Explore More</h2>
+      <p>Still unsure? Choose a topic below to dive deeper:</p>
+
+      <div class="menu">
+        <button class="menu-btn" onclick="openSection('roadmaps')">Roadmaps</button>
+        <button class="menu-btn" onclick="openSection('career')">Career Options</button>
+        <button class="menu-btn" onclick="openSection('experts')">Ask Experts</button>
+        <button class="menu-btn" onclick="openSection('study')">Study Fields</button>
+        <button class="menu-btn" onclick="openSection('creators')">Ask Creators</button>
+        <button class="menu-btn" onclick="openSection('help')">Help</button>
+      </div>
+
+      <div id="info-box" class="info-box hidden">
+        <h3 id="info-title"></h3>
+        <p id="info-content"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Not Sure Where to Begin • <a href="index.html">Home</a></p>
+  </footer>
+
+  <script src="notsurescript.js"></script>
+</body>
+</html>

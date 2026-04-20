@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Question Paper Builder</title>
+<style>
+  :root{
+    --maxw:900px;
+    --muted:#666;
+    --accent:#0b5;
+    --paper-bg: #fff;
+    --page-pad:28px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+  body{
+    margin:0;
+    background:#f1f3f5;
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+    padding:24px;
+  }
+
+  /* Canvas: printable paper */
+  .paper {
+    width: calc(var(--maxw));
+    background:var(--paper-bg);
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    padding:var(--page-pad);
+    color:#111;
+  }
+  .paper .meta {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+  }
+  .paper h1{
+    font-size:20px;
+    margin:4px 0;
+    text-align:center;
+    width:100%;
+  }
+  .paper .meta .left,
+  .paper .meta .right{
+    font-size:14px;
+    color:var(--muted);
+    width:150px;
+  }
+
+  .section-title{
+    text-align:center;
+    margin:14px 0 6px;
+    font-weight:700;
+    letter-spacing:0.5px;
+  }
+  .notes{
+    font-size:12px;
+    color:var(--muted);
+    border-bottom:1px dashed #ddd;
+    padding-bottom:8px;
+    margin-bottom:12px;
+  }
+
+  .qblock{
+    margin:8px 0 16px;
+    font-size:14px;
+  }
+  .qheader{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-bottom:6px;
+  }
+  .qnum{
+    width:36px;
+    font-weight:700;
+  }
+  .qtext{
+    flex:1;
+  }
+  .controls{
+    display:flex;
+    gap:8px;
+    margin-bottom:12px;
+    flex-wrap:wrap;
+  }
+
+  /* Editor panel on right */
+  .editor {
+    width:360px;
+    background:#fff;
+    padding:18px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    border-radius:8px;
+    height:fit-content;
+  }
+  .editor h3{margin:2px 0 8px;}
+  label{display:block;font-size:12px;margin-top:8px;color:var(--muted);}
+  input[type="text"], textarea, select{
+    width:100%;
+    padding:8px;
+    margin-top:6px;
+    box-sizing:border-box;
+    border:1px solid #ddd;
+    border-radius:6px;
+    font-size:14px;
+  }
+  textarea{min-height:70px;resize:vertical;}
+  button{
+    padding:8px 12px;
+    border:0;
+    background:#0b5;
+    color:#fff;
+    border-radius:6px;
+    cursor:pointer;
+  }
+  button.secondary{background:#4677ff;}
+  button.ghost{background:transparent;color:#333;border:1px solid #ddd;}
+  .small{padding:6px 8px;font-size:13px}
+  .muted{color:var(--muted);font-size:13px}
+  .row{display:flex;gap:8px}
+  .row > *{flex:1;}
+
+  /* Print styles */
+  @media print{
+    body{background:white;}
+    .editor{display:none;}
+    .paper{box-shadow:none;width:100%;max-width:none;margin:0;padding:18mm;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- Paper preview -->
+  <div class="paper" id="paper">
+    <div class="meta">
+      <div class="left" id="leftMeta">Time: <span id="timeDisplay">2 Hours</span></div>
+      <h1 id="titleDisplay">Format of question paper for Std. X — GEOGRAPHY & ECONOMICS</h1>
+      <div class="right" id="rightMeta">Marks: <span id="marksDisplay">40</span></div>
+    </div>
+
+    <div class="notes" id="notesDisplay">
+      <strong>Note:</strong>
+      <ol>
+        <li>All questions are compulsory.</li>
+        <li>Figures to the right indicate full marks.</li>
+        <li>Use the outline map of India for Q.3.(C)</li>
+        <li>The use of stencil is allowed for drawing maps.</li>
+        <li>Use graph paper for Q.3.(A).</li>
+      </ol>
+    </div>
+
+    <!-- Geography Section -->
+    <div class="section">
+      <div class="section-title">GEOGRAPHY</div>
+      <div class="qblock" id="geoQ1">
+        <div class="qheader"><div class="qnum">Q.1</div>
+          <div class="qtext"> (A) Choose the correct alternatives from the brackets and rewrite the statements. (3 statements): [3]<br>
+          (B) Match the columns: [3]</div>
+        </div>
+      </div>
+
+      <div class="qblock" id="geoQ2">
+        <div class="qheader"><div class="qnum">Q.2</div>
+          <div class="qtext">(A) Give geographical reasons for the following statements (Any two out of three). [4] <br>
+          (B) Write short notes on: (any two out of three) [4]</div>
+        </div>
+      </div>
+
+      <div class="qblock" id="geoQ3">
+        <div class="qheader"><div class="qnum">Q.3</div>
+          <div class="qtext">(A) Graph question with the help of given information: [2]<br>
+          (B) Questions based on diagram observation. (Any two out of four). [2]<br>
+          (C) Map question. To mark name and give index. (Any two out of four) [2]</div>
+        </div>
+      </div>
+
+      <div class="qblock" id="geoQ4">
+        <div class="qheader"><div class="qnum">Q.4</div>
+          <div class="qtext">Answer the questions in detail: (Any two out of three) [8]</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Economics Section -->
+    <div class="section" style="margin-top:18px">
+      <div class="section-title">ECONOMICS</div>
+
+      <div class="qblock" id="ecoQ5">
+        <div class="qheader"><div class="qnum">Q.5</div>
+          <div class="qtext">Fill in the blanks by choosing appropriate alternatives. (Any one out of two) [2]</div>
+        </div>
+      </div>
+
+      <div class="qblock" id="ecoQ6">
+        <div class="qheader"><div class="qnum">Q.6</div>
+          <div class="qtext">Answer the questions in one or two sentences: (any three out of five) [6]</div>
+        </div>
+      </div>
+
+      <div class="qblock" id="ecoQ7">
+        <div class="qheader"><div class="qnum">Q.7</div>
+          <div class="qtext">Answer the questions in five or six sentences. (Any one out of two): [4]</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:18px;color:var(--muted)">*</div>
+  </div>
+
+  <!-- Editor / Controls -->
+  <div class="editor">
+    <h3>Paper Editor</h3>
+
+    <label>Title</label>
+    <input id="titleInput" type="text" value="Format of question paper for Std. X — GEOGRAPHY & ECONOMICS">
+
+    <div class="row">
+      <div>
+        <label>Time</label>
+        <input id="timeInput" type="text" value="2 Hours">
+      </div>
+      <div>
+        <label>Marks</label>
+        <input id="marksInput" type="text" value="40">
+      </div>
+    </div>
+
+    <label>Notes</label>
+    <textarea id="notesInput">1. All questions are compulsory.
+2. Figures to the right indicate full marks.
+3. Use the outline map of India for Q.3.(C)
+4. The use of stencil is allowed for drawing maps.
+5. Use graph paper for Q.3.(A).
+</textarea>
+
+    <div style="margin-top:12px;display:flex;gap:8px">
+      <button id="applyMeta" class="small">Apply to Paper</button>
+      <button id="printBtn" class="small secondary">Print / Save PDF</button>
+    </div>
+
+    <hr style="margin:12px 0">
+
+    <h4>Auto-generate Questions</h4>
+    <p class="muted">Simulated AI generator. Replace the generator function with your server/AI call for real generation.</p>
+
+    <label>Choose section</label>
+    <select id="sectionSelect">
+      <option value="geography">Geography</option>
+      <option value="economics">Economics</option>
+    </select>
+
+    <label>Question group (e.g. Q.2 (A) )</label>
+    <input id="groupInput" type="text" placeholder="e.g. Q.2 (A)">
+
+    <label>Number of items to generate</label>
+    <select id="countSelect">
+      <option>1</option><option>2</option><option>3</option><option>4</option>
+    </select>
+
+    <div style="margin-top:8px;display:flex;gap:8px">
+      <button id="generateBtn" class="small">Generate Questions</button>
+      <button id="clearGenerated" class="small ghost">Clear Generated</button>
+    </div>
+
+    <hr style="margin:12px 0">
+
+    <h4>Manual Add</h4>
+    <label>Question Text</label>
+    <textarea id="manualQ"></textarea>
+    <div style="margin-top:8px;display:flex;gap:8px">
+      <button id="addManual" class="small">Add to Geography (append)</button>
+      <button id="addManualEco" class="small ghost">Add to Economics (append)</button>
+    </div>
+
+    <hr style="margin:12px 0">
+    <p class="muted">Tip: To integrate a real AI (OpenAI or other), call your server endpoint here to return generated questions and then insert them into the paper DOM where insertGenerated() is used.</p>
+  </div>
+
+<script>
+  // --- Utility DOM refs
+  const titleInput = document.getElementById('titleInput');
+  const timeInput = document.getElementById('timeInput');
+  const marksInput = document.getElementById('marksInput');
+  const notesInput = document.getElementById('notesInput');
+
+  const titleDisplay = document.getElementById('titleDisplay');
+  const timeDisplay = document.getElementById('timeDisplay');
+  const marksDisplay = document.getElementById('marksDisplay');
+  const notesDisplay = document.getElementById('notesDisplay');
+
+  document.getElementById('applyMeta').addEventListener('click', ()=>{
+    titleDisplay.textContent = titleInput.value || 'Question Paper';
+    timeDisplay.textContent = timeInput.value || '';
+    marksDisplay.textContent = marksInput.value || '';
+    // Notes - convert newlines into list items if needed
+    const lines = notesInput.value.split(/\n+/).map(l=>l.trim()).filter(Boolean);
+    const html = '<strong>Note:</strong><ol>' + lines.map(li => '<li>'+ escapeHtml(li) +'</li>').join('') + '</ol>';
+    notesDisplay.innerHTML = html;
+  });
+
+  document.getElementById('printBtn').addEventListener('click', ()=> window.print());
+
+  // Simple sample pools for simulated generation (replace with your AI)
+  const geoSamples = [
+    "Explain why coastal areas are densely populated compared to interior regions.",
+    "Describe the factors affecting monsoon rainfall distribution in India.",
+    "Give geographical reasons for soil erosion along river banks.",
+    "Write short notes on: (i) map scale (ii) contour lines (iii) wind erosion."
+  ];
+  const ecoSamples = [
+    "Define 'opportunity cost' and give an example.",
+    "Explain the difference between needs and wants.",
+    "Describe two measures the government can adopt to control inflation.",
+    "Explain how consumer demand affects production decisions."
+  ];
+
+  function escapeHtml(s){
+    return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+  }
+
+  // Insert generated into DOM (append as small paragraphs inside section)
+  function insertGenerated(section, group, items){
+    const container = document.createElement('div');
+    container.className = 'qblock';
+    const header = document.createElement('div');
+    header.className = 'qheader';
+    const num = document.createElement('div');
+    num.className = 'qnum';
+    num.textContent = group || 'Gen';
+    const qtext = document.createElement('div');
+    qtext.className = 'qtext';
+    qtext.innerHTML = items.map((it, i)=> <div style="margin-bottom:6px"><strong>${i+1}.</strong> ${escapeHtml(it)}</div>).join('');
+    header.appendChild(num);
+    header.appendChild(qtext);
+    container.appendChild(header);
+
+    if(section === 'geography'){
+      // insert before Economics section
+      const eco = document.querySelector('.section + .section');
+      eco.parentNode.insertBefore(container, eco);
+    } else {
+      // append to end
+      document.querySelector('.paper').appendChild(container);
+    }
+  }
+
+  // Simulated AI generation — replace this with a fetch to server/AI
+  function generateSimulated(section, count){
+    const pool = (section === 'geography') ? geoSamples : ecoSamples;
+    const results = [];
+    for(let i=0;i<count;i++){
+      const idx = Math.floor(Math.random()*pool.length);
+      results.push(pool[idx]);
+    }
+    return results;
+  }
+
+  document.getElementById('generateBtn').addEventListener('click', ()=>{
+    const section = document.getElementById('sectionSelect').value;
+    const group = document.getElementById('groupInput').value;
+    const count = parseInt(document.getElementById('countSelect').value,10) || 1;
+
+    // If you want real AI: call your endpoint here, e.g. fetch('/generate', {method:'POST', body: JSON.stringify({section,group,count})}) ...
+    // For now we use simulated generation:
+    const items = generateSimulated(section, count);
+    insertGenerated(section, group, items);
+  });
+
+  document.getElementById('clearGenerated').addEventListener('click', ()=>{
+    // naive clear: remove qblocks that were appended dynamically (we mark Generated by qnum text 'Gen' or user group)
+    const qblocks = Array.from(document.querySelectorAll('.paper .qblock'));
+    qblocks.forEach(q=>{
+      const qnum = q.querySelector('.qnum')?.textContent || '';
+      if(qnum === 'Gen' || qnum === document.getElementById('groupInput').value) q.remove();
+    });
+  });
+
+  document.getElementById('addManual').addEventListener('click', ()=>{
+    const text = document.getElementById('manualQ').value.trim();
+    if(!text) return alert('Enter question text first');
+    insertGenerated('geography', 'Manual', [text]);
+    document.getElementById('manualQ').value = '';
+  });
+  document.getElementById('addManualEco').addEventListener('click', ()=>{
+    const text = document.getElementById('manualQ').value.trim();
+    if(!text) return alert('Enter question text first');
+    insertGenerated('economics', 'Manual', [text]);
+    document.getElementById('manualQ').value = '';
+  });
+
+  // Initialize display
+  (function init(){
+    // nothing else needed for now
+  })();
+
+</script>
+
+</body>
+</html>

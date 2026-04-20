@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #0f0f1a, #151524, #0f0f1a);
+  color: #fff;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.header h1 {
+  font-size: 2.8rem;
+  background: linear-gradient(90deg, #03e9f4, #8a2be2);
+  -moz-animation: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowText 3s infinite alternate;
+}
+
+/* Controls */
+.controls {
+  margin: 20px auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.controls input, 
+.controls select, 
+.controls button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.controls button {
+  background: #03e9f4;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controls button:hover {
+  background: #8a2be2;
+  color: #fff;
+}
+
+/* Question Cards */
+.question-list {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.questionCard {
+  background: rgba(255,255,255,0.08);
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+  border-left: 3px solid #03e9f4;
+}
+
+.questionCard:hover {
+  transform: translateY(-3px);
+  border-left-color: #8a2be2;
+}
+
+.questionCard h3 {
+  margin: 0 0 8px 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+  background: rgba(255,255,255,0.04);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Animations */
+@keyframes glowText {
+  from { filter: drop-shadow(0 0 4px #03e9f4); }
+  to { filter: drop-shadow(0 0 10px #8a2be2); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

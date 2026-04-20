@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Mathematics | Blueprint IQ</title>
+    <link rel="stylesheet" href="Assets/learn.css">
+    <style>
+        /* Extra styling for math visibility */
+        .math-block {
+            background: rgba(0, 0, 0, 0.03);
+            padding: 10px;
+            border-radius: 8px;
+            font-family: "Courier New", monospace;
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-gradient-overlay"></div>
+
+    <main class="container">
+        <header class="hero-header">
+            <h1 class="animate-header">Engineering Mathematics</h1>
+            <p class="animate-subhead">Linear Algebra, Calculus, and Series Convergence</p>
+        </header>
+
+        <section class="content-card fade-in">
+            <h2><span class="accent">UNIT</span> 01</h2>
+            <h3>Linear Algebra I: Systems & Eigenvalues</h3>
+            <p>This unit builds the foundation for solving complex engineering systems through matrix manipulation.</p>
+            <ul>
+                <li><strong>Linear Dependence:</strong> A set of vectors is dependent if $c_1v_1 + c_2v_2 + ... = 0$ for non-zero constants.</li>
+                <li><strong>Eigen Theory:</strong> Solving $(A - \lambda I)x = 0$ to find the scaling factors ($\lambda$) and invariant directions ($x$) of a matrix.</li>
+                <li><strong>Iteration Method:</strong> Used for finding the <strong>Largest Eigenvalue</strong>. By repeatedly multiplying a trial vector by the matrix, the vector converges to the dominant eigenvector.</li>
+                <li><strong>Decomposition:</strong> 
+                    <ul>
+                        <li><strong>Gaussian Elimination:</strong> Systematic row reduction to Upper Triangular form.</li>
+                        <li><strong>LU Decomposition:</strong> Factorizing $A = LU$. Useful for solving $Ax=B$ multiple times with different $B$ values.</li>
+                    </ul>
+                </li>
+            </ul>
+            <section class="content-card fade-in">
+    <h2><span class="accent">03.</span> Interactive Matrix Solver</h2>
+    <p>Enter coefficients to solve the system using <strong>Gaussian Elimination</strong>.</p>
+    
+    <div class="matrix-container">
+        <div class="matrix-row">
+            <input type="number" id="m00" value="2"> <input type="number" id="m01" value="1"> <input type="number" id="m02" value="-1"> 
+            <span class="equals">|</span> <input type="number" id="b0" value="8">
+        </div>
+        <div class="matrix-row">
+            <input type="number" id="m10" value="-3"> <input type="number" id="m11" value="-1"> <input type="number" id="m12" value="2"> 
+            <span class="equals">|</span> <input type="number" id="b1" value="-11">
+        </div>
+        <div class="matrix-row">
+            <input type="number" id="m20" value="-2"> <input type="number" id="m21" value="1"> <input type="number" id="m22" value="2"> 
+            <span class="equals">|</span> <input type="number" id="b2" value="-3">
+        </div>
+    </div>
+
+    <button class="submitFeedback" onclick="solveMatrix()" style="margin-top: 20px;">Calculate Solutions</button>
+
+    <div id="matrixResult" class="success-message" style="display: none; margin-top: 20px;">
+        <h3>Results:</h3>
+        <p id="solX">X = </p>
+        <p id="solY">Y = </p>
+        <p id="solZ">Z = </p>
+    </div>
+</section>
+        </section>
+
+        <section class="content-card fade-in">
+            <h2><span class="accent">UNIT</span> 02</h2>
+            <h3>Linear Algebra II: Vector Spaces & SVD</h3>
+            <p>Moving from basic matrices to abstract vector spaces and advanced factorization.</p>
+            <ul>
+                <li><strong>Vector Spaces:</strong> Exploring <strong>Basis</strong> (the skeleton of the space) and <strong>Dimension</strong> (the size of the basis).</li>
+                <li><strong>Rank-Nullity Theorem:</strong> A fundamental balance: $\text{dim}(\text{Domain}) = \text{Rank} + \text{Nullity}$.</li>
+                <li><strong>Inner Product Spaces:</strong> Introducing the concept of <strong>Norm</strong> (length) and <strong>Orthogonality</strong>.</li>
+                <li><strong>Gram-Schmidt Process:</strong> Converting any basis into a set of perpendicular (orthonormal) vectors.</li>
+                
+                <li><strong>SVD (Singular Value Decomposition):</strong> Factoring any matrix into $U \Sigma V^T$. This is the "Gold Standard" for data noise reduction.</li>
+            </ul>
+        </section>
+
+        <section class="content-card fade-in">
+            <h2><span class="accent">UNIT</span> 03</h2>
+            <h3>Differential Calculus: Successive & Mean Value</h3>
+            <p>Advanced derivation techniques and function approximations.</p>
+            <ul>
+                <li><strong>Leibnitz’s Rule:</strong> The general formula for the $n^{th}$ derivative of a product: $(uv)_n = \sum \binom{n}{r} u_{n-r} v_r$.</li>
+                <li><strong>Series Expansion:</strong> 
+                    <ul>
+                        <li><strong>Taylor's:</strong> Predicting function values near a point $x=a$.</li>
+                        <li><strong>Maclaurin's:</strong> A specific case of Taylor's where $a=0$.</li>
+                    </ul>
+                </li>
+                
+                <li><strong>L’Hospital’s Rule:</strong> A powerful tool for solving limits that result in indeterminate forms like $0/0$ or $\infty/\infty$.</li>
+                <li><strong>Maxima & Minima:</strong> Using the first and second derivative tests to find optimized points in engineering designs.</li>
+            </ul>
+        </section>
+
+        <section class="content-card fade-in">
+            <h2><span class="accent">UNIT</span> 04</h2>
+            <h3>Integral Calculus: Special Functions & Applications</h3>
+            <p>Evaluating complex areas and volumes through specialized integration.</p>
+            <ul>
+                <li><strong>Beta & Gamma Functions:</strong> "The Euler Integrals" that solve factorials for non-integers and simplify trigonometric integrals.</li>
+                <li><strong>Curve Tracing:</strong> Techniques to sketch <strong>Cartesian curves</strong> by analyzing asymptotes, symmetry, and points of inflection.</li>
+                <li><strong>Definite Integral Applications:</strong>
+                    <ul>
+                        <li><strong>Rectification:</strong> Finding the exact length of a curved wire.</li>
+                        <li><strong>Volume of Revolution:</strong> Calculating the volume of an object created by spinning a curve around the x or y-axis.</li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </section>
+
+        <section class="content-card fade-in">
+            <h2><span class="accent">UNIT</span> 05</h2>
+            <h3>Sequence & Series: Convergence Testing</h3>
+            <p>Ensuring that mathematical approximations actually settle on a finite value.</p>
+            <ul>
+                <li><strong>Convergence Tests:</strong> Including the <strong>Ratio Test</strong>, <strong>Root Test</strong>, and <strong>Comparison Test</strong> to check if an infinite sum is finite.</li>
+                <li><strong>Cauchy Sequence:</strong> A sequence where the difference between terms approaches zero as they progress to infinity.</li>
+                <li><strong>Alternating Series:</strong> Using <strong>Leibniz’s Test</strong> to determine convergence when terms flip between positive and negative.</li>
+                <li><strong>Absolute Convergence:</strong> A stronger form of convergence where the sum of absolute values also converges.</li>
+            </ul>
+        </section>
+
+        <section class="content-card fade-in">
+            <h2><span class="accent">02.</span> Important Questions</h2>
+
+            <div class="question-box">
+                <button class="accordion">1. Explain the difference between Rank and Nullity? <span>+</span></button>
+                <div class="panel">
+                    <p><strong>Rank</strong> is the number of linearly independent rows/columns (the dimension of the output space). <strong>Nullity</strong> is the dimension of the kernel (the space that gets mapped to zero).</p>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">2. How is the Power Method used for Eigenvalues? <span>+</span></button>
+                <div class="panel">
+                    <p>It is an <strong>iteration method</strong> where you multiply a matrix $A$ by an initial vector $x_0$. After several steps, the vector will point in the direction of the <strong>Largest Eigenvalue</strong>.</p>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">3. State the condition for Rolle's Theorem? <span>+</span></button>
+                <div class="panel">
+                    <p>1. Function must be continuous on $[a, b]$. <br> 2. Differentiable on $(a, b)$. <br> 3. $f(a) = f(b)$. If these hold, there exists at least one $c$ where $f'(c) = 0$.</p>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">4. When is a series considered 'Absolutely Convergent'? <span>+</span></button>
+                <div class="panel">
+                    <p>A series $\sum a_n$ is absolutely convergent if the series of its absolute values $\sum |a_n|$ converges. Absolute convergence implies convergence.</p>
+                </div>
+            </div>
+
+            <br>
+            <a href="index.html" class="major-link">← Return to Dashboard</a>
+        </section>
+    </main>
+
+    <script>
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                    this.querySelector('span').innerText = "+";
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                    this.querySelector('span').innerText = "-";
+                }
+            });
+        }
+    </script>
+    <script src="Assets/learn.js"></script>
+    
+</body>
+</html>

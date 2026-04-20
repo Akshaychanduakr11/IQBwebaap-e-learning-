@@ -1,0 +1,198 @@
+/* --- Reset & Base --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #333;
+  min-height: 100vh;
+  overflow-x: hidden; 
+}
+
+.main-container {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* --- Shared Button Styles --- */
+.back-btn {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #135aba;
+}
+
+/* --- View Management --- */
+.view-section {
+  display: none;
+  width: 100%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.view-section.active {
+  display: block;
+}
+
+.view-section.hidden {
+  display: none;
+}
+
+/* --- VIEW 1: Home List Styles --- */
+
+/* Nav bar for Home Page Back Button */
+.top-nav {
+  padding: 15px 20px;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin: 10px 0 30px 0;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.subject-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0 20px 40px 20px;
+  max-width: 600px; 
+  margin: 0 auto;
+}
+
+.subject-card {
+  background: #ffffff;
+  padding: 22px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  border-left: 6px solid #1a73e8; 
+}
+
+.subject-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  background-color: #fafafa;
+}
+
+.subject-card h2 {
+  font-size: 1.15rem;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+}
+
+.subject-card .arrow {
+  color: #1a73e8;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+/* --- VIEW 2: Syllabus Page Styles --- */
+
+/* UPDATED HEADER: Center Title, Left Button */
+.syllabus-header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 100;
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  padding: 15px 20px 20px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Override back button inside syllabus header to stay left */
+.syllabus-header .back-btn {
+  align-self: flex-start; /* Keeps button on the left */
+  margin-bottom: 10px;
+}
+
+/* UPDATED TITLE: Centered */
+.header-title {
+  font-size: 1.8rem; 
+  font-weight: 800;  
+  color: #2c3e50;
+  line-height: 1.2;
+  margin: 0;
+  width: 100%;       /* Takes full width */
+  text-align: center; /* Centers text */
+}
+
+.syllabus-content-wrapper {
+  padding: 20px;
+  background-color: #fff;
+  min-height: calc(100vh - 120px); 
+  max-width: 800px;
+  margin: 0 auto; 
+}
+
+/* Typography inside Syllabus */
+.syllabus-body h3 {
+  color: #1a73e8;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.syllabus-body h3:first-child {
+  margin-top: 10px;
+}
+
+.syllabus-body p {
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin-bottom: 18px;
+  font-size: 1rem;
+}
+
+/* --- Animation --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Desktop Tweaks --- */
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .subject-card h2 {
+    font-size: 1.3rem;
+  }
+  
+  .header-title {
+    font-size: 2.2rem; 
+  }
+
+  .syllabus-content-wrapper {
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  }
+}

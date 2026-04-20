@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question Query Bank</title>
+  <link rel="stylesheet" href="Assets/Style.css">
+  <!-- Font Awesome CDN (Latest Version - Responsive Icons) -->
+ <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbarr">
+  <div class="logo">
+    <img src="Assets/logo2.jpeg" alt="Logo" class="brand-logo">
+  </div>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+  <ul class="menu">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="syllabus.html">Syllabus</a></li>
+    <li><a href="Questionpaper.html">Question Paper</a></li>
+    <li><a href="Setting.html">Settings</a></li>
+    <li><a href="#" onclick="openChat()">Chatbot</a></li>
+    <li><a href="Signin.html">Sign In</a></li>
+    
+    <li><button onclick="logout()">Logout</button></li>
+  </ul>
+</nav>
+
+  <section class="hero" id="heroSection">
+  
+  <div class="hero-bg-cubes" id="cubeContainer">
+    </div>
+
+  <div class="hero-content">
+    <h1 class="fade-in-up">Knowledge At Your Fingertips</h1>
+    
+    <p class="subtitle"><span id="typewriter"></span><span class="cursor">|</span></p>
+    
+    <div class="search-bar fade-in-up delay-1">
+       <input id="userInput" type="text" placeholder="Ask our AI...">
+       <button id="searchBtn">🔍</button>
+    </div>
+    
+    <p id="aiResponse" class="response"></p>
+    <a href="notsure.html" class="link fade-in-up delay-2">Not Sure Where To Begin?</a>
+  </div>
+
+</section>
+
+  <!-- Grid Section -->
+  <section class="grid-section">
+    <div class="grid">
+      <div class="card php">
+        <h2>Essential Chemistry</h2>
+        <p>Science that shapes technology</p>
+        <button><a href="learn1.html">Start Learning</a></button>
+      </div>
+
+      <div class="card jquery">
+        <h2>Applied Algebra</h2>
+        <p>Logic that drives solutions</p>
+        <button><a href="learn2.html">Start Learning</a></button>
+      </div>
+
+      <div class="card java">
+        <h2>Basics of Electronic Engineering</h2>
+        <p>The foundation of smart systems.</p>
+        <button><a href="learn3.html">Start Learning</a></button>
+      </div>
+
+      <div class="card cpp">
+        <h2>Problem Solving Using 'C'</h2>
+        <p>Build logic through C.</p>
+        <button><a href="learn4.html">Start Learning</a></button>
+      </div>
+      <div class="card php">
+        <h2>Communication Skills</h2>
+        <p>Where language meets technology</p>
+        <button><a href="learn5.html">Start Learning</a></button>
+      </div>
+
+      <div class="card jquery">
+        <h2>Mechanics</h2>
+        <p>Forces that shape the world</p>
+        <button><a href="learn6.html">Start Learning</a></button>
+      </div>
+       <div class="card java">
+        <h2>Java</h2>
+        <p>A programming language</p>
+        <button><a href="learn7.html">Start Learning</a></button>
+      </div>
+
+      <div class="card cpp">
+        <h2>AI</h2>
+        <p>A web server programming language</p>
+        <button><a href="learn8.html">Start Learning</a></button>
+      </div>
+           <div class="card php">
+        <h2>ML</h2>
+        <p>Learn from data</p>
+        <button><a href="learn9.html">Start Learning</a></button>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Questions You May Have</h2>
+
+      <div class="accordion">
+        <button>What is AI?</button>
+        <div class="accordion-content">
+          <p>IoT governance refers to the policies, rules, and frameworks that manage the security, privacy, and ethical use of Internet of Things systems.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button>What are the security and privacy concerns of IoT?</button>
+        <div class="accordion-content">
+          <p>Concerns include unauthorized data access, device vulnerabilities, weak authentication, and lack of encryption.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button>What is the role of data governance in data privacy and security?</button>
+        <div class="accordion-content">
+          <p>Data governance ensures data is managed responsibly by setting policies for quality, privacy, compliance, and security.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button>What is the internet of things (IoT) and how can we secure it?</button>
+        <div class="accordion-content">
+          <p>IoT is a network of connected devices. Security involves encryption, regular updates, strong authentication, and network monitoring.</p>
+        </div>
+        <div class="accordion">
+        <button>What is AI?</button>
+        <div class="accordion-content">
+          <p>IoT governance refers to the policies, rules, and frameworks that manage the security, privacy, and ethical use of Internet of Things systems.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button>What are the security and privacy concerns of IoT?</button>
+        <div class="accordion-content">
+          <p>Concerns include unauthorized data access, device vulnerabilities, weak authentication, and lack of encryption.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button>What is the role of data governance in data privacy and security?</button>
+        <div class="accordion-content">
+          <p>Data governance ensures data is managed responsibly by setting policies for quality, privacy, compliance, and security.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+    
+  </section>
+
+ <!-- feedback.html (Include inside your existing website, no second <body>) -->
+<section class="feedback-section">
+  <div class="feedback-container fade-in">
+    <div class="feedback-content" id="feedbackFormContainer">
+      <h2>Submit your feedback!</h2>
+      <p>Your insights help us build a better <strong>Blueprint IQ</strong> platform for engineers.</p>
+      
+      <div class="input-group">
+        <input type="email" id="feedbackEmail" placeholder="Enter your E-mail address" required>
+      </div>
+      
+      <div class="input-group">
+        <textarea id="feedbackText" placeholder="Describe your experience or suggest a feature..."></textarea>
+      </div>
+      
+      <button class="submitFeedback" onclick="handleSubmit()">
+        <span>Send Feedback</span>
+        <div class="btn-hover-effect"></div>
+      </button>
+    </div>
+
+    <div class="success-message" id="successMessage" style="display: none;">
+      <div class="check-icon">✓</div>
+      <h2>Thank You!</h2>
+      <p>Your feedback has been transmitted to our engineering team.</p>
+      <button class="reset-btn" onclick="resetForm()">Submit Another</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+
+
+      <!-- About Section -->
+        <div class="footer-about">
+        <img src="Assets/logo2.jpeg" alt="question queries Logo" class="footer-logo">
+        <p><strong>Communications Address:</strong><br>
+          Kalmehswar, Nagpur-(441501),GNIET college, akshaychandurkar11@gmai.com, imaditya040@email.com, 
+        </p>
+        <p><strong>Registered Address:</strong><br>
+          Kalmehswar, Nagpur-(441501),GNIET college
+        </p>
+      </div>
+
+      <!-- Links Section -->
+      <div class="footer-links">
+        <div>
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Legal</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact Us</a>
+      
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="#">POTD</a>
+          <a href="#">Connect</a>
+          <a href="#">Community</a>
+          <a href="#">Blogs</a>
+        </div>
+        <div>
+          <h4>Tutorials</h4>
+          <a href="#">Programming Languages</a>
+          <a href="#">DSA</a>
+          <a href="#">Web Technology</a>
+          <a href="#">AI, ML & Data Science</a>
+          <a href="#">Career development</a>
+          <a href="#">CS Core Subjects</a>
+          <a href="#">Career Road map</a>
+          <a href="#">RTMNU</a>
+          <a href="#"></a>
+          <a href="#">Software and Tools</a>
+        </div>
+        <div>
+          <h4>Courses</h4>
+          <a href="#">Certification</a>
+          <a href="#">Subject</a>
+          <a href="#">1st semester</a>
+          <a href="#">Trending Technologies</a>
+        </div>
+    
+        <div>
+          <h4>Help & Support</h4>
+          <a href="#">Contact us </a>
+          <a href="#">Settings</a>
+          <a href="#">Maintainence</a>
+          <a href="#">Profile</a>
+          <a href="#">System Design</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Center Section -->
+    <div class="footer-bottom">
+      <!-- App Links -->
+      <div class="app-links">
+        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+      <div class="social-links">
+        <a href="https://x.com/imaditya_04?t=vI8YAWCmOzroXMp7EOxjuw&s=09"><i class="fab fa-x"></i></a>
+        <a href="https://www.instagram.com/?deoia=1"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/aditya-gwalwanshi-962636286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <!-- Advertise Button -->
+      <button class="advertise-btn">Advertise with us</button><br> 
+    </div>
+    </div>
+    <div class="copyright">
+  <br><p>copyright@2025 Question Query Bank || All right reserved </p></div>
+  </footer>
+
+ <script>
+    const accordions = document.querySelectorAll(".accordion button");
+
+    accordions.forEach(btn => {
+      btn.addEventListener("click", () => {
+        // Auto-close others
+        accordions.forEach(otherBtn => {
+          if (otherBtn !== btn) {
+            otherBtn.classList.remove("active");
+            otherBtn.nextElementSibling.style.maxHeight = null;
+          }
+        });
+
+        // Toggle clicked
+        btn.classList.toggle("active");
+        const content = btn.nextElementSibling;
+
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+
+
+<script src="script.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

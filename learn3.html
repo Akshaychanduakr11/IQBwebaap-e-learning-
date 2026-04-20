@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEEE Mastery | Blueprint IQ</title>
+    <link rel="stylesheet" href="Assets/learn.css">
+    <style>
+        /* --- CONSISTENT STYLE ENGINE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        .content-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 6px solid #f8981d; /* Java/Engineering Orange */
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        h1 { font-size: 2.8rem; color: #1a1a2e; text-align: center; margin-bottom: 40px; text-transform: uppercase; }
+        h2 { color: #1a1a2e; margin-bottom: 15px; font-size: 1.8rem; }
+        .accent { color: #f8981d; font-weight: 800; }
+
+        /* --- CODE WINDOW (VS CODE STYLE) --- */
+        .code-window {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.95rem;
+            margin: 20px 0;
+            border-top: 30px solid #333;
+            position: relative;
+        }
+        .code-window::before {
+            content: "Terminal — BEEE_Lab";
+            position: absolute;
+            top: -25px;
+            left: 15px;
+            color: #888;
+            font-size: 11px;
+        }
+
+        /* --- INTERACTIVE ACCORDION --- */
+        .question-box { border-bottom: 1px solid #eee; }
+        .accordion {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            color: #333;
+        }
+        .panel { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #fdfdfd; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Basic Electrical & Electronics</h1>
+            <p style="text-align: center; color: #555; margin-top: -30px; margin-bottom: 40px;">Hardware Foundations for Computer Science</p>
+        </header>
+
+        <section class="content-card">
+            <h2><span class="accent">UNIT I:</span> Analog Electronics & Components</h2>
+            <p>Electronics is vital for CS as it defines how hardware processes electrical signals into data. This unit covers the physics of components.</p>
+            
+            
+
+            <ul>
+                <li><strong>Passive Components:</strong> Resistors (limit current), Capacitors (store charge), and Inductors (store magnetic energy).</li>
+                <li><strong>Active Components:</strong> Diodes (rectification) and Transistors (switching/amplification).</li>
+                <li><strong>Op-Amps:</strong> Operational Amplifiers are used for signal scaling and mathematical operations.</li>
+            </ul>
+
+            <div class="code-window">
+                <span style="color: #6a9955;">// Ohm's Law Application</span><br>
+                Voltage (V) = Current (I) * Resistance (R);<br>
+                <span style="color: #569cd6;">if</span> (Resistance == <span style="color: #b5cea8;">0</span>) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span style="color: #ce9178;">"Short Circuit Detected"</span>);<br>
+                }
+            </div>
+            
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">UNIT II:</span> Digital Logic & Circuits</h2>
+            <p>How physical signals become Binary (0 and 1). This is the logic-gate architecture of modern CPUs.</p>
+            
+            
+
+            <ul>
+                <li><strong>Combinational:</strong> Logic depends only on current input (Adders, Multiplexers, Decoders).</li>
+                <li><strong>Sequential:</strong> Logic with memory (Flip-Flops, Registers, Shift Registers).</li>
+                <li><strong>Adders:</strong> Half Adder (2 bits) and Full Adder (3 bits) are the heart of Arithmetic Logic Units (ALU).</li>
+            </ul>
+            
+
+[Image of a JK Flip-Flop circuit diagram and its truth table]
+
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">UNIT III:</span> Microcontrollers & Sensors</h2>
+            <p>Introduction to programmable hardware like the <strong>Arduino Platform</strong> and real-world interfacing.</p>
+            
+            <ul>
+                <li><strong>Microcontrollers:</strong> Integrated circuits that contain a processor, memory, and I/O on one chip.</li>
+                <li><strong>ADC / DAC:</strong> Converting real-world analog signals (like light) into digital bits and vice-versa.</li>
+                <li><strong>Sensors:</strong> Temperature, LDR (Light), Ultrasonic, and Proximity sensors.</li>
+            </ul>
+            
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">UNIT IV:</span> Embedded Systems & IoT</h2>
+            <p>Dedicated systems where hardware and software are tightly integrated for specific tasks.</p>
+            
+            
+
+            <div class="code-window">
+                <span style="color: #6a9955;">// Simple Arduino LED Actuator Code</span><br>
+                <span style="color: #569cd6;">void</span> <span style="color: #dcdcaa;">loop</span>() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(LED_PIN, HIGH); <span style="color: #6a9955;">// Motor/LED ON</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;delay(<span style="color: #b5cea8;">1000</span>);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(LED_PIN, LOW); <span style="color: #6a9955;">// OFF</span><br>
+                }
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">UNIT V:</span> Communication Systems</h2>
+            <p>The evolution of data transfer from simple Serial cables to high-speed 5G networks.</p>
+
+            <ul>
+                <li><strong>Wireless Network Topologies:</strong> Star, Mesh, and Bus configurations.</li>
+                <li><strong>Cellular Concepts:</strong> Frequency reuse and cell splitting in 4G and 5G Technology.</li>
+                <li><strong>Protocols:</strong> Bluetooth, Wi-Fi (WLAN), and CDMA Technology.</li>
+            </ul>
+            
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">Exam</span> Prep: Critical Questions</h2>
+            
+            <div class="question-box">
+                <button class="accordion">1. Why use frequency reuse in cellular systems? <span>+</span></button>
+                <div class="panel">
+                    <p>It allows the same radio frequency to be used in different cells that are far apart, increasing the total capacity of the network without needing more spectrum.</p>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">2. Difference between Latches and Flip-Flops? <span>+</span></button>
+                <div class="panel">
+                    <p>Latches are level-triggered (respond to voltage level), while Flip-Flops are edge-triggered (respond only to the change/clock pulse).</p>
+                </div>
+            </div>
+            <div class="question-box">
+                <button class="accordion">1. Define V, I, and R and their relationship? <span>+</span></button>
+                <div class="panel">
+                    <p>Voltage (V) is electrical potential, Current (I) is flow of charge, and Resistance (R) is the opposition to flow. Relationship: <strong>V = I × R</strong> (Ohm's Law).</p>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">2. Difference between Half Adder and Full Adder? <span>+</span></button>
+                <div class="panel">
+                    <p>A <strong>Half Adder</strong> adds two single-bit binary numbers (A, B) and has two outputs (Sum, Carry). A <strong>Full Adder</strong> adds three bits (A, B, and Carry-in) and is used for multi-bit addition.</p>
+                    
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">3. Explain the working of a Multiplexer (MUX)? <span>+</span></button>
+                <div class="panel">
+                    <p>A Multiplexer is a combinational circuit that selects one of many input signals and forwards it to a single output line based on <strong>select lines</strong>. It is also known as a "Data Selector."</p>
+                    
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">4. What is Analog-to-Digital Conversion (ADC)? <span>+</span></button>
+                <div class="panel">
+                    <p>ADC converts continuous physical signals (like temperature from a sensor) into a discrete digital number so a microcontroller like Arduino can process the data.</p>
+                    
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">5. Explain IoT Architecture layers? <span>+</span></button>
+                <div class="panel">
+                    <p>1. <strong>Perception Layer:</strong> Sensors and actuators. <br> 2. <strong>Network Layer:</strong> Data transmission (Wi-Fi, 5G). <br> 3. <strong>Middleware Layer:</strong> Cloud and data processing. <br> 4. <strong>Application Layer:</strong> User interface/App.</p>
+                    
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">6. Difference between Serial and Parallel Communication? <span>+</span></button>
+                <div class="panel">
+                    <p><strong>Serial:</strong> Data bits are sent one by one over a single wire (e.g., USB). Slower but works over long distances. <br> <strong>Parallel:</strong> Multiple bits are sent simultaneously over multiple wires. Faster but limited to very short distances.</p>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">7. What is the "Cellular Concept" in wireless? <span>+</span></button>
+                <div class="panel">
+                    <p>It involves dividing a large geographic area into small <strong>hexagonal cells</strong>. Each cell is served by its own low-power base station, allowing frequencies to be reused in non-adjacent cells to increase system capacity.</p>
+                    
+                </div>
+            </div>
+        </section>
+
+        <div class="dashboard-footer">
+           <a href="index.html" class="major-link">← Return to Dashboard</a>
+        </div>
+
+        <footer style="text-align: center; padding: 20px; color: #888; font-size: 0.8rem;">
+            <p>&copy; 2026 Engineering Mastery Portal | BEEE Technical Module</p>
+        </footer>
+    </div>
+
+    <script>
+        // Accordion Logic
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

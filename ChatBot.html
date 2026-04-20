@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Chatbot</title>
+  <link rel="stylesheet" href="Assets/chatbot.css" />
+</head>
+<body>
+ <!--script>
+  const user = localStorage.getItem("user");
+
+if (!user) {
+  alert("Please login first");
+  window.location.href = "index.html";
+}
+</script> --> 
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>🤖 My AI Chat</h2>
+      <button class="close-btn" id="closeSidebar">&times;</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">🏠 Home</a></li>
+        <li><a href="profile.html">👤 Profile</a></li>
+        <li><a href="setting.html">⚙️ Settings</a></li>
+      
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Chat Section -->
+  <main class="chat-container">
+    <header class="chat-header">
+      <button class="hamburger" id="openSidebar">&#9776;</button>
+      <h1>AI Chatbot</h1>
+    </header>
+
+    <section class="chat-box" id="chatBox">
+      <div class="bot-message">👋 Hi! I'm your AI assistant. Ask me anything!</div>
+    </section>
+
+
+    <footer class="chat-input">
+      <input id="userInput" type="text" placeholder="Ask our AI">
+       <button id="micBtn">🎤</button>
+       <button id="sendBtn">Send</button>
+    </footer>
+  </main>
+
+<script src="chatbot.js" defer></script>
+
+</body>
+</html>

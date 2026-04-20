@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question Bank Syllabus</title>
+  <link rel="stylesheet" href="Syllabus.css">
+</head>
+<body>
+
+  <div class="main-container">
+
+    <div id="home-view" class="view-section active">
+      
+      <div class="top-nav">
+        <button id="homeBackBtn" class="back-btn">← Back</button>
+      </div>
+
+      <h1 class="page-title">Subjects</h1>
+      
+      <div class="subject-list">
+        <div class="subject-card" data-subject="essential-chemistry">
+          <h2>Essential Chemistry</h2>
+          <span class="arrow">→</span>
+        </div>
+        <div class="subject-card" data-subject="applied-algebra">
+          <h2>Applied Algebra</h2>
+          <span class="arrow">→</span>
+        </div>
+        <div class="subject-card" data-subject="electrical-engineering">
+          <h2>Basics of Electrical Engineering</h2>
+          <span class="arrow">→</span>
+        </div>
+        <div class="subject-card" data-subject="problem-solving-c">
+          <h2>Problem Solving Using C</h2>
+          <span class="arrow">→</span>
+        </div>
+        <div class="subject-card" data-subject="communication-skill">
+          <h2>Communication Skills</h2>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="syllabus-view" class="view-section hidden">
+      <div class="syllabus-header">
+        <button id="syllabusBackBtn" class="back-btn">← Back</button>
+        <h2 id="subjectTitle" class="header-title">Subject Name</h2>
+      </div>
+
+      <div class="syllabus-content-wrapper">
+        <div id="subjectContent" class="syllabus-body">
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="Syllabus.js"></script>
+</body>
+</html>

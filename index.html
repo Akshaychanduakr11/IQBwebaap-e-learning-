@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question Query Bank</title>
+  <link rel="stylesheet" href="Assets/Style.css">
+  <!-- Font Awesome CDN (Latest Version - Responsive Icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div id="popup">
+  <div class="popup-box">
+
+    <h2>Login</h2>
+
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+
+    <div>
+      <button id="loginBtn">Login</button>
+      <button id="registerBtn">Register</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- navbar -->
+  <nav class="navbarr">
+  <div class="logo">
+    <img src="Assets/logo2.jpeg" alt="Logo" class="brand-logo">
+  </div>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+  <ul class="menu">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="syllabus.html">Syllabus</a></li>
+    <li><a href="Questionpaper.html">Question Paper</a></li>
+    <li><a href="admin.html">Admin Page</a></li>
+    <li><a href="ChatBot.html">Chatbot</a></li>
+    <li><a href="Signin.html">Sign In</a></li>
+    
+    <li><button onclick="logout()">Logout</button></li>
+
+<script>
+function logout() {
+  localStorage.removeItem("user");
+  alert("Logged out");
+ window.location.href = "index.html";
+}
+</script>
+  </ul>
+</nav>
+
+  <section class="hero" id="heroSection">
+  
+  <div class="hero-bg-cubes" id="cubeContainer">
+    </div>
+
+  <div class="hero-content">
+    <h1 class="fade-in-up">Knowledge At Your Fingertips</h1>
+    
+    <p class="subtitle"><span id="typewriter"></span><span class="cursor">|</span></p>
+    
+    <div class="search-bar fade-in-up delay-1">
+       <input id="userInput" type="text" placeholder="Ask our AI....">
+       <button id="searchBtn">🔍</button>
+    </div>
+    
+    <p id="aiResponse" class="response"></p>
+    <a href="notsure.html" class="link fade-in-up delay-2">Not Sure Where To Begin?</a>
+  </div>
+
+</section>
+
+  <!-- Grid Section -->
+  <section class="grid-section">
+    <div class="grid">
+      <div class="card php">
+        <h2>Essential Chemistry</h2>
+        <p>Science that shapes technology</p>
+        <button><a href="learn1.html">Start Learning</a></button>
+      </div>
+
+      <div class="card jquery">
+        <h2>Applied Algebra</h2>
+        <p>Logic that drives solutions</p>
+        <button><a href="learn2.html">Start Learning</a></button>
+      </div>
+
+      <div class="card java">
+        <h2>Basics of Electronic Engineering</h2>
+        <p>The foundation of smart systems.</p>
+        <button><a href="learn3.html">Start Learning</a></button>
+      </div>
+
+      <div class="card cpp">
+        <h2>Problem Solving Using 'C'</h2>
+        <p>Build logic through C.</p>
+        <button><a href="learn4.html">Start Learning</a></button>
+      </div>
+      <div class="card php">
+        <h2>Communication Skills</h2>
+        <p>Where language meets technology</p>
+        <button><a href="learn5.html">Start Learning</a></button>
+      </div>
+
+      <div class="card jquery">
+        <h2>Mechanics</h2>
+        <p>Forces that shape the world</p>
+        <button><a href="learn6.html">Start Learning</a></button>
+      </div>
+       <div class="card java">
+        <h2>Java</h2>
+        <p>A programming language</p>
+        <button><a href="learn7.html">Start Learning</a></button>
+      </div>
+
+      <div class="card cpp">
+        <h2>AI</h2>
+        <p>A web server programming language</p>
+        <button><a href="learn8.html">Start Learning</a></button>
+      </div>
+           <div class="card php">
+        <h2>ML</h2>
+        <p>Learn from data</p>
+        <button><a href="learn9.html">Start Learning</a></button>
+      </div>
+    </div>
+  </section>
+  <!--admin panel contennt -->
+  <section class="updates-section">
+  <h2 class="section-title">✨ Latest Updates</h2>
+
+  <div id="postsContainer" class="updates-grid"></div>
+</section>
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Questions You May Have</h2>
+
+      <div class="accordion">
+        <button>What is AI?</button>
+        <div class="accordion-content">
+          <p>IoT governance refers to the policies, rules, and frameworks that manage the security, privacy, and ethical use of Internet of Things systems.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button>What are the security and privacy concerns of IoT?</button>
+        <div class="accordion-content">
+          <p>Concerns include unauthorized data access, device vulnerabilities, weak authentication, and lack of encryption.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button>What is the role of data governance in data privacy and security?</button>
+        <div class="accordion-content">
+          <p>Data governance ensures data is managed responsibly by setting policies for quality, privacy, compliance, and security.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button>What is the internet of things (IoT) and how can we secure it?</button>
+        <div class="accordion-content">
+          <p>IoT is a network of connected devices. Security involves encryption, regular updates, strong authentication, and network monitoring.</p>
+        </div>
+        <div class="accordion">
+        <button>What is AI?</button>
+        <div class="accordion-content">
+          <p>IoT governance refers to the policies, rules, and frameworks that manage the security, privacy, and ethical use of Internet of Things systems.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button>What are the security and privacy concerns of IoT?</button>
+        <div class="accordion-content">
+          <p>Concerns include unauthorized data access, device vulnerabilities, weak authentication, and lack of encryption.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button>What is the role of data governance in data privacy and security?</button>
+        <div class="accordion-content">
+          <p>Data governance ensures data is managed responsibly by setting policies for quality, privacy, compliance, and security.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+    
+  </section>
+
+ <!-- feedback.html (Include inside your existing website, no second <body>) -->
+<section class="feedback-section">
+  <div class="feedback-container fade-in">
+    <div class="feedback-content" id="feedbackFormContainer">
+      <h2>Submit your feedback!</h2>
+      <p>Your insights help us build a better <strong>Blueprint IQ</strong> platform for engineers.</p>
+      
+      <div class="input-group">
+        <input type="email" id="feedbackEmail" placeholder="Enter your E-mail address" required>
+      </div>
+      
+      <div class="input-group">
+        <textarea id="feedbackText" placeholder="Describe your experience or suggest a feature..."></textarea>
+      </div>
+      
+      <button class="submitFeedback" onclick="handleSubmit()">
+        <span>Send Feedback</span>
+        <div class="btn-hover-effect"></div>
+      </button>
+    </div>
+
+    <div class="success-message" id="successMessage" style="display: none;">
+      <div class="check-icon">✓</div>
+      <h2>Thank You!</h2>
+      <p>Your feedback has been transmitted to our engineering team.</p>
+      <button class="reset-btn" onclick="resetForm()">Submit Another</button>
+    </div>
+  </div>
+</section>
+<!-- footer section -->
+<footer class="footer">
+  <div class="footer-container">
+
+
+      <!-- About Section -->
+        <div class="footer-about">
+        <img src="Assets/logo2.jpeg" alt="question queries Logo" class="footer-logo">
+        <p><strong>Communications Address:</strong><br>
+          Kalmehswar, Nagpur-(441501),GNIET college, questionbankrtmnu@gmail.com, <br>7083973649.
+        </p>
+        <p><strong>Registered Address:</strong><br>
+          Kalmehswar, Nagpur-(441501),GNIET college
+        </p>
+      </div>
+
+      <!-- Links Section -->
+      <div class="footer-links">
+        <div>
+          <h4>Company</h4>
+          <a href="aboutus.html">About Us</a>
+          <a href="legal.html">Legal</a>
+          <a href="https://www.irjet.net/archives/V12/i11/IRJET-V12I1127.pdf" target="_blank">Research Paper</a>
+          <a href="notsure.html">Careers</a>
+          <a href="contact.html">Contact Us</a>
+      
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="contact.html">Connect</a>
+          <a href="#">Whatsaap</a>
+          <a href="#">GITHUB</a>
+        </div>
+        <div>
+          <h4>Tutorials</h4>
+          <a href="learn7.html">JAVA</a>
+          <a href="learn8.html">AI</a>
+          <a href="learn6.html">MECHANICS</a>
+          <a href="learn9.html">ML</a>
+          <a href="notsure.html">Career development</a>
+          <a href="syllabus.html">CS Core Subjects</a>
+          <a href="notsure.html">Career Road map</a>
+          <a href="https://your-link-here.com" target="_blank">RTMNU</a>
+        </div>
+        <div>
+          <h4>Courses</h4>
+          <a href="certificate.html">Certification</a>
+          <a href="syllabus.html">Subject</a>
+          <a href="QuestionPaper.html">1st semester</a>
+        </div>
+    
+        <div>
+          <h4>Help & Support</h4>
+          <a href="contact.html">Contact us </a>
+          <a href="profile.html">Profile</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Center Section -->
+    <div class="footer-bottom">
+      <!-- App Links -->
+      <div class="app-links">
+      <div class="social-links">
+        <a href="https://x.com/imaditya_04?t=vI8YAWCmOzroXMp7EOxjuw&s=09"><i class="fab fa-x"></i></a>
+        <a href="https://www.instagram.com/?deoia=1"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/aditya-gwalwanshi-962636286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <!-- Advertise Button -->
+      <button class="advertise-btn">Advertise</button><br> 
+    </div>
+    </div>
+    <div class="copyright">
+  <br><p>copyright@2025 Question Query Bank || All right reserved </p></div>
+  </footer>
+
+ <script>
+    const accordions = document.querySelectorAll(".accordion button");
+
+    accordions.forEach(btn => {
+      btn.addEventListener("click", () => {
+        // Auto-close others
+        accordions.forEach(otherBtn => {
+          if (otherBtn !== btn) {
+            otherBtn.classList.remove("active");
+            otherBtn.nextElementSibling.style.maxHeight = null;
+          }
+        });
+
+        // Toggle clicked
+        btn.classList.toggle("active");
+        const content = btn.nextElementSibling;
+
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+
+
+<script src="script.js"></script>
+<script>
+function openChat(event) {
+  event.preventDefault(); // 🚀 VERY IMPORTANT
+
+  const user = localStorage.getItem("user");
+
+  if (!user) {
+    localStorage.setItem("redirectAfterLogin", "ChatBot.html");
+    window.location.href = "Signin.html";
+  } else {
+    window.location.href = "ChatBot.html";
+  }
+}
+</script>
+<!-- your page content -->
+<!-- 1. CHECK LOGIN -->
+<script>
+  const user = localStorage.getItem("user");
+
+  if (!user) {
+    console.log("Show popup after 10 sec");
+  }
+</script>
+<script>
+console.log("INDEX JS LOADED");
+</script>
+<script type="module">
+import { auth } from "./firebase.js";
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+console.log("SCRIPT LOADED");
+
+const popup = document.getElementById("popup");
+
+// ❗ safety check
+if (!popup) {
+  console.error("POPUP NOT FOUND");
+}
+
+// show popup after 10 sec
+setTimeout(() => {
+  const user = localStorage.getItem("user");
+
+  if (!user && popup) {
+    popup.style.display = "flex";
+  }
+}, 10000);
+
+// LOGIN
+document.getElementById("loginBtn").onclick = async () => {
+  const email = document.getElementById("email").value;
+  const pass = document.getElementById("password").value;
+
+  try {
+    const res = await signInWithEmailAndPassword(auth, email, pass);
+
+    localStorage.setItem("user", JSON.stringify(res.user));
+
+    popup.style.display = "none";
+
+  } catch (err) {
+    alert(err.message);
+  }
+};
+
+// REGISTER
+document.getElementById("registerBtn").onclick = async () => {
+  const email = document.getElementById("email").value;
+  const pass = document.getElementById("password").value;
+
+  try {
+    const res = await createUserWithEmailAndPassword(auth, email, pass);
+
+    localStorage.setItem("user", JSON.stringify(res.user));
+
+    popup.style.display = "none";
+
+  } catch (err) {
+    alert(err.message);
+  }
+};
+</script>
+<div id="popup">...</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } 
+  from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+  apiKey: "AIzaSyB8WyC3hnjxzXkX0hX6hZ_h5c7BNmuO_n8",
+  authDomain: "iqbwebapp.firebaseapp.com",
+  projectId: "iqbwebapp",
+  storageBucket: "iqbwebapp.firebasestorage.app",
+  messagingSenderId: "923239157693",
+  appId: "1:923239157693:web:1431a97a17f357fd8fccd4"
+};
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Make function global
+  window.handleSubmit = async function () {
+    const email = document.getElementById("feedbackEmail").value;
+    const message = document.getElementById("feedbackText").value;
+
+    if (!email || !message) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "feedbacks"), {
+        email: email,
+        message: message,
+        createdAt: serverTimestamp()
+      });
+
+      // Show success UI
+      document.getElementById("feedbackFormContainer").style.display = "none";
+      document.getElementById("successMessage").style.display = "block";
+
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong!");
+    }
+  };
+
+  window.resetForm = function () {
+    document.getElementById("feedbackEmail").value = "";
+    document.getElementById("feedbackText").value = "";
+    document.getElementById("feedbackFormContainer").style.display = "block";
+    document.getElementById("successMessage").style.display = "none";
+  };
+</script>
+
+<script>
+const input = document.getElementById("userInput");
+const button = document.getElementById("searchBtn");
+
+// Button click
+button.addEventListener("click", function(e) {
+  e.preventDefault(); // IMPORTANT (stop old redirect)
+  searchGoogle();
+});
+
+// Enter key
+input.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    e.preventDefault(); // IMPORTANT
+    searchGoogle();
+  }
+});
+
+function searchGoogle() {
+  const query = input.value.trim();
+
+  if (!query) {
+    alert("Please enter something");
+    return;
+  }
+
+  const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+  
+  // Redirect to Google
+  window.location.href = url;
+}
+</script>
+<script type="module" src="js/popup-auth.js"></script>
+<script type="module" src="js/fetchData.js"></script>
+<script type="module" src="firebaseData.js"></script>
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

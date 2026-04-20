@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduPortal - Question Papers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="Assets/QuestionPaper.css" />
+</head>
+<body>
+
+<!-- HOME -->
+<div class="screen active" id="screen-home">
+  <div class="topbar">
+    <button class="back-btn" id="back-home">&#8592;</button>
+    <h1>EduPortal</h1>
+  </div>
+  <div class="home-inner">
+    <div class="logo-wrap">
+      <div class="logo-icon">🎓</div>
+      <h2>EduPortal</h2>
+      <p>B.Tech Question Papers &amp; More</p>
+    </div>
+    <div class="home-card" id="btn-qp">
+      <div class="hc-icon">📄</div>
+      <div>
+        <h3>Question Papers</h3>
+        <p>Find all courses question papers &amp; marking scheme</p>
+      </div>
+    </div>
+    <p class="home-footer">RTM Nagpur University · B.Tech (CSE / IT)</p>
+  </div>
+</div>
+
+<!-- SEMESTER + SUBJECT -->
+<div class="screen" id="screen-semester">
+  <div class="topbar">
+    <button class="back-btn" id="back-semester">&#8592;</button>
+    <h1>Question Papers</h1>
+  </div>
+  <div class="content-pad">
+    <div class="hero-banner">
+      <div class="hero-text">
+        <h3>Find all courses<br>question papers</h3>
+        <p>Select your semester &amp; subject</p>
+      </div>
+      <div class="hero-emoji">📚</div>
+    </div>
+    <div class="section-label">Choose Your Semester</div>
+    <div class="sem-grid" id="sem-grid"></div>
+    <div class="section-label">Choose Subject</div>
+    <div class="subject-list" id="subject-list">
+      <div class="empty-hint">Please select a semester above</div>
+    </div>
+  </div>
+</div>
+
+<!-- YEAR -->
+<div class="screen" id="screen-year">
+  <div class="topbar">
+    <button class="back-btn" id="back-year">&#8592;</button>
+    <h1 id="year-topbar">Select Year</h1>
+  </div>
+  <div class="content-pad">
+    <div class="hero-banner">
+      <div class="hero-text">
+        <h3>Select Exam Year</h3>
+        <p id="year-sub-name"></p>
+      </div>
+      <div class="hero-emoji">📅</div>
+    </div>
+    <div class="section-label">Available Papers</div>
+    <div class="year-list" id="year-list"></div>
+  </div>
+</div>
+
+<!-- QUESTION PAPER -->
+<div class="screen" id="screen-paper">
+  <div class="topbar">
+    <button class="back-btn" id="back-paper">&#8592;</button>
+    <h1 id="paper-topbar">Question Paper</h1>
+  </div>
+  <div class="paper-outer">
+    <div class="uni-paper" id="uni-paper-body"></div>
+  </div>
+</div>
+
+<script src="QuestionPaper.js"></script>
+</body>
+</html>

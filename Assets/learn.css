@@ -1,0 +1,208 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* Professional Light Linear Gradient */
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #2c3e50;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+/* --- Responsive Image Container --- */
+.unit-image-container {
+    margin: 25px auto;
+    max-width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.responsive-img {
+    max-width: 100%; /* Image will never be wider than the card */
+    height: auto;    /* Maintain aspect ratio */
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for desktop users */
+.responsive-img:hover {
+    transform: scale(1.02);
+    cursor: zoom-in;
+}
+
+/* Figcaption (The text under the image) */
+figcaption {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .unit-image-container {
+        padding: 10px;
+        margin: 15px 0;
+    }
+    
+    figcaption {
+        font-size: 0.75rem;
+    }
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* --- Animations --- */
+.animate-header {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: dropIn 1s forwards;
+}
+
+.animate-subhead {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s 0.5s forwards;
+}
+
+@keyframes dropIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* --- Content Cards --- */
+.content-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    border-left: 5px solid #00d4ff;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #1a1a2e;
+}
+
+.accent {
+    color: #00d4ff;
+    font-weight: 800;
+    margin-right: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+strong {
+    color: #000;
+    font-weight: 700;
+}
+
+/* --- Major Links Styling --- */
+.major-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.major-link:hover {
+    color: #00d4ff;
+    border-bottom: 2px solid #00d4ff;
+}
+
+/* --- Accordion Questions --- */
+.question-box {
+    margin-top: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.accordion {
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+    padding: 18px 0;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.4s;
+}
+
+.accordion:hover { color: #00d4ff; }
+
+.panel {
+    padding: 0 18px;
+    background-color: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-radius: 8px;
+}
+/* mathmatics calculator8*/
+.matrix-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.matrix-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.matrix-row input {
+    width: 60px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-weight: bold;
+}
+
+.equals {
+    font-weight: bold;
+    font-size: 20px;
+    color: #1a1a2e;
+}

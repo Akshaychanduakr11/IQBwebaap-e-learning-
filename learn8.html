@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern AI Paradigms | Blueprint IQ</title>
+    <style>
+        /* --- CONSISTENT LIGHT THEME --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        .content-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 6px solid #9d50bb; /* Purple Accent for AI */
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        h1 { font-size: 2.8rem; color: #1a1a2e; text-align: center; margin-bottom: 40px; text-transform: uppercase; }
+        h2 { color: #1a1a2e; margin-bottom: 15px; font-size: 1.8rem; }
+        .accent { color: #9d50bb; font-weight: 800; }
+
+        /* --- LOGIC/CODE BLOCK (VS CODE STYLE) --- */
+        .logic-block {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.95rem;
+            margin: 20px 0;
+            border-top: 30px solid #333;
+            position: relative;
+        }
+        .logic-block::before {
+            content: "AI_Logic_Engine";
+            position: absolute;
+            top: -25px;
+            left: 15px;
+            color: #888;
+            font-size: 11px;
+        }
+
+        /* --- DASHBOARD BUTTON --- */
+        .dashboard-footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-bottom: 60px;
+        }
+
+        .btn-dashboard {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #1a1a2e;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .btn-dashboard:hover {
+            background: #9d50bb;
+            transform: scale(1.05);
+        }
+
+        /* --- ACCORDION --- */
+        .question-box { border-bottom: 1px solid #eee; }
+        .accordion {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            color: #333;
+        }
+        .panel { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #fdfdfd; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Modern AI Paradigms</h1>
+            <p style="text-align: center; color: #555; margin-top: -30px; margin-bottom: 40px;">Knowledge Engineering & Generative Systems</p>
+        </header>
+
+        <section class="content-card">
+            <h2><span class="accent">01.</span> Knowledge Representation (KR)</h2>
+            <p>For an AI to reason, it needs a way to represent the world. Unlike raw data, KR focuses on <strong>Semantics</strong> (meaning) and <strong>Logic</strong>.</p>
+            
+            
+
+            <div class="logic-block">
+                <span style="color: #6a9955;">// First-Order Logic (FOL) Example</span><br>
+                ∀x Man(x) ⇒ Mortal(x)  <span style="color: #888;">// Axiom: All men are mortal</span><br>
+                Man(Socrates)           <span style="color: #888;">// Fact: Socrates is a man</span><br>
+                ∴ Mortal(Socrates)      <span style="color: #888;">// Inference: Socrates is mortal</span>
+            </div>
+
+            <p><strong>Semantic Networks:</strong> Graphical representations showing relationships between objects.<br>
+            <strong>Frames:</strong> Data structures for representing stereotypical situations (e.g., a "Hotel" frame).</p>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">02.</span> Expert Systems</h2>
+            <p>Systems that mimic human expertise using <strong>IF-THEN</strong> rules. They consist of a Knowledge Base and an Inference Engine.</p>
+            
+            
+
+            <ul>
+                <li><strong>Forward Chaining:</strong> Data-driven; starts with facts to reach a conclusion.</li>
+                <li><strong>Backward Chaining:</strong> Goal-driven; starts with a hypothesis and looks for supporting facts.</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">03.</span> Generative AI & LLMs</h2>
+            <p>Modern AI uses the <strong>Transformer architecture</strong> to create new content. LLMs process data through tokenization and latent space vectors.</p>
+            
+            
+
+            <div class="logic-block">
+                <span style="color: #6a9955;">// Self-Attention Concept</span><br>
+                "The <span style="color: #ce9178;">bank</span> was closed because the <span style="color: #ce9178;">river</span> overflowed."<br>
+                <span style="color: #888;">// The model connects "bank" to "river" to understand context.</span>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">04.</span> AI Ethics & Safety</h2>
+            <p>Focuses on the <strong>Alignment Problem</strong>—ensuring AI systems act in accordance with human values and safety standards.</p>
+            <ul>
+                <li><strong>Algorithmic Bias:</strong> Prejudices inherited from training data.</li>
+                <li><strong>Explainable AI (XAI):</strong> Making "Black Box" models understandable to humans.</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">Exam</span> Prep: AI Deep Dive</h2>
+
+            <div class="question-box">
+                <button class="accordion">1. What is the Turing Test? <span>+</span></button>
+                <div class="panel">
+                    <p>A test of a machine's ability to exhibit intelligent behavior indistinguishable from a human. If a human judge cannot tell the difference between the machine and a person, the machine passes.</p>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">2. What are Hallucinations in LLMs? <span>+</span></button>
+                <div class="panel">
+                    <p>When an LLM generates factually incorrect information that sounds highly confident and grammatically correct, usually due to training data patterns.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="dashboard-footer">
+            <a href="index.html" class="btn-dashboard">← Return to Dashboard</a>
+        </div>
+
+        <footer style="text-align: center; padding: 20px; color: #888; font-size: 0.8rem;">
+            <p>&copy; 2026 AI Mastery Portal | Blueprint IQ</p>
+        </footer>
+    </div>
+
+    <script>
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

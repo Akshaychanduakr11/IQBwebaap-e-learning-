@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Engineering | Blueprint IQ</title>
+    <link rel="stylesheet" href="Assets/learn.css">
+    <style>
+        /* --- ML PROFESSIONAL THEME --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+        body {
+            background: linear-gradient(135deg, #eef2f3 0%, #8e9eab 100%);
+            color: #2c3e50;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 50px 20px; }
+
+        .content-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            border-left: 6px solid #27ae60; /* Emerald Green */
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        h1 { font-size: 2.8rem; color: #1e3a8a; text-align: center; margin-bottom: 40px; }
+        h2 { color: #27ae60; margin-bottom: 15px; font-size: 1.8rem; }
+        .accent { color: #16a085; font-weight: 800; }
+
+        /* --- ML CODE BLOCK (PYTHONIC) --- */
+        .code-window {
+            background: #2d3436;
+            color: #55efc4;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            margin: 20px 0;
+            border-top: 25px solid #1e272e;
+            position: relative;
+        }
+        .code-window::before {
+            content: "scikit-learn_workspace.py";
+            position: absolute;
+            top: -22px;
+            left: 10px;
+            font-size: 10px;
+            color: #b2bec3;
+        }
+
+        /* --- COMPARISON TABLE --- */
+        .ml-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .ml-table th, .ml-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .ml-table th { background-color: #f4f7f6; color: #27ae60; }
+
+        /* --- ACCORDION --- */
+        .accordion {
+            width: 100%;
+            background: #f8f9fa;
+            border: none;
+            text-align: left;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: white;
+            padding: 0 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Machine Learning Engineering</h1>
+            <p style="text-align:center; color: #7f8c8d; margin-top:-30px; margin-bottom:40px;">Data-Driven Predictive Modeling & Optimization</p>
+        </header>
+
+        <section class="content-card">
+            <h2><span class="accent">01.</span> ML Paradigms</h2>
+            <p>Machine Learning is the study of algorithms that improve through experience. We categorize ML into three primary types:</p>
+            
+            <table class="ml-table">
+                <tr>
+                    <th>Type</th>
+                    <th>Core Concept</th>
+                    <th>Algorithms</th>
+                </tr>
+                <tr>
+                    <td><strong>Supervised</strong></td>
+                    <td>Learning with Labeled Data</td>
+                    <td>Linear Regression, SVM, Random Forest</td>
+                </tr>
+                <tr>
+                    <td><strong>Unsupervised</strong></td>
+                    <td>Finding Hidden Patterns</td>
+                    <td>K-Means, PCA, Association Rules</td>
+                </tr>
+                <tr>
+                    <td><strong>Reinforcement</strong></td>
+                    <td>Learning via Reward/Penalty</td>
+                    <td>Q-Learning, SARSA</td>
+                </tr>
+            </table>
+            
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">02.</span> Linear & Logistic Regression</h2>
+            <p>These are the foundational blocks of predictive modeling. <strong>Linear Regression</strong> predicts continuous values, while <strong>Logistic Regression</strong> handles binary classification.</p>
+            
+            <div class="code-window">
+                <span style="color: #fdcb6e;"># Logistic Regression for Binary Classification</span><br>
+                from sklearn.linear_model import LogisticRegression<br>
+                from sklearn.metrics import accuracy_score<br><br>
+                
+                model = LogisticRegression()<br>
+                model.fit(X_train, y_train)<br>
+                predictions = model.predict(X_test)<br>
+                print(f"Accuracy: {accuracy_score(y_test, predictions)}")
+            </div>
+            
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">03.</span> Feature Engineering & Selection</h2>
+            <p>A model is only as good as the data it receives. <strong>Preprocessing</strong> is where 80% of ML work happens.</p>
+            <ul>
+                <li><strong>Scaling:</strong> Normalization (0-1) and Standardization (Mean=0, Std=1) to ensure features contribute equally.</li>
+                <li><strong>Handling Missing Data:</strong> Using Mean/Median imputation or dropping NaN values.</li>
+                <li><strong>Categorical Encoding:</strong> Converting text labels into numbers using One-Hot Encoding.</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">04.</span> Random Forest & Boosting</h2>
+            <p>Individual models can be weak. <strong>Ensemble Methods</strong> combine multiple models to create a robust "Strong Learner."</p>
+            <ul>
+                <li><strong>Bagging (Random Forest):</strong> Parallel training on different data subsets.</li>
+                <li><strong>Boosting (XGBoost/AdaBoost):</strong> Sequential training where each model corrects the errors of the previous one.</li>
+            </ul>
+            
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">05.</span> Performance Metrics</h2>
+            <p>How do we know if our model is successful? We use specific metrics depending on the problem type:</p>
+            <div class="highlight-box" style="background:#f1f2f6; padding:15px; border-radius:8px;">
+                <strong>Classification:</strong> Precision, Recall, F1-Score, and Confusion Matrix.<br>
+                <strong>Regression:</strong> Mean Squared Error (MSE), R-Squared ($R^2$), and MAE.
+            </div>
+            
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">06.</span> Important ML Interview Questions</h2>
+
+            <div class="question-box">
+                <button class="accordion">1. What is the Curse of Dimensionality? <span>+</span></button>
+                <div class="panel">
+                    <p>It refers to various phenomena that arise when analyzing data in high-dimensional spaces. As the number of features increases, the volume of the space increases so fast that the available data becomes sparse, making it hard to find patterns.</p>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">2. Explain Bias-Variance Tradeoff in ML? <span>+</span></button>
+                <div class="panel">
+                    <p><strong>Bias</strong> is error due to overly simple assumptions (Underfitting). <strong>Variance</strong> is error due to excessive complexity (Overfitting). The goal of ML is to minimize both to achieve a model that generalizes well.</p>
+                    
+                </div>
+            </div>
+
+            <div class="question-box">
+                <button class="accordion">3. Difference between K-Means and KNN? <span>+</span></button>
+                <div class="panel">
+                    <p><strong>K-Means:</strong> An Unsupervised clustering algorithm used to group similar data points. <br> <strong>KNN (K-Nearest Neighbors):</strong> A Supervised classification algorithm used to label a point based on its closest neighbors.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; margin-top: 40px; color: #27ae60;">
+            <p>&copy; 2026 Machine Learning Mastery | <a href="index.html" style="text-decoration:none; color:#1e3a8a; font-weight:bold;">Home</a></p>
+        </footer>
+    </div>
+    <title>ML Advanced Engineering | Blueprint IQ</title>
+    
+</head>
+<body>
+
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 60px;">
+            <h1 style="font-size: 3.2rem;">Advanced ML Engineering</h1>
+            <p style="color: #000000;">Dimensionality Reduction & Hyperparameter Optimization</p>
+        </header>
+
+        <section class="content-card">
+            <h2><span class="accent">01.</span> Principal Component Analysis (PCA)</h2>
+            <p>In datasets with hundreds of features, we face the <strong>Curse of Dimensionality</strong>. PCA reduces complexity by projecting data onto its most significant "Principal Components" while retaining maximum variance.</p>
+            
+            
+
+            <div class="code-window">
+                <span style="color: #888;"># Reducing feature space to 2 dimensions</span><br>
+                from sklearn.decomposition import PCA<br>
+                pca = PCA(n_components=2)<br>
+                X_reduced = pca.fit_transform(X_large_dataset)
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">02.</span> Clustering: K-Means & Hierarchical</h2>
+            <p>Clustering groups data points without labels. This is essential for <strong>Customer Segmentation</strong> and <strong>Anomaly Detection</strong>.</p>
+            
+            <div class="stats-box">
+                <div class="stat-item">
+                    <h4>K-Means</h4>
+                    <p>Uses centroids and iterative distance minimization.</p>
+                </div>
+                <div class="stat-item">
+                    <h4>DBSCAN</h4>
+                    <p>Density-based; excellent for identifying clusters of arbitrary shapes.</p>
+                </div>
+            </div>
+
+            
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">03.</span> Regularization: Lasso & Ridge</h2>
+            <p>To prevent <strong>Overfitting</strong>, we penalize large coefficients in our mathematical model. This forces the model to stay simple and generalize better to new data.</p>
+            <ul>
+                <li><strong>L1 (Lasso):</strong> Adds absolute value of coefficients. Can perform <em>Feature Selection</em> by shrinking useless feature weights to zero.</li>
+                <li><strong>L2 (Ridge):</strong> Adds squared value of coefficients. Best for handling <em>Multicollinearity</em>.</li>
+            </ul>
+
+            
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">04.</span> Optimization (Grid & Random Search)</h2>
+            <p>Machine Learning models have "knobs" called hyperparameters (e.g., Learning Rate, Depth of Tree). We use automated searches to find the best configuration.</p>
+            
+            <div class="code-window">
+                <span style="color: #888;"># Finding the best parameters for a model</span><br>
+                from sklearn.model_selection import GridSearchCV<br>
+                params = {'n_estimators': [50, 100, 200], 'max_depth': [3, 5, 10]}<br>
+                search = GridSearchCV(RandomForestClassifier(), params, cv=5)
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="accent">05.</span> Engineering Interview Topics</h2>
+
+            <div class="stat-item" style="margin-bottom: 20px; text-align: left;">
+                <strong>Q1: What is Cross-Validation (K-Fold)?</strong>
+                <p>A technique where the data is split into $K$ parts. The model is trained on $K-1$ parts and tested on the remaining part. This process repeats $K$ times to ensure the model isn't just "lucky" with a specific data split.</p>
+                
+            </div>
+
+            <div class="stat-item" style="text-align: left;">
+                <strong>Q2: Explain the Elbow Method in Clustering?</strong>
+                <p>It is used to find the optimal number of clusters ($K$). We plot the "Sum of Squared Errors" (SSE) against $K$. The point where the rate of decrease slows down (the "elbow") is the ideal $K$.</p>
+                
+            </div>
+        </section>
+
+        <footer style="text-align: center; margin-top: 40px; color: #030303;">
+            <p>Return to <a href="index.html" style="color: #fff; text-decoration: underline;">HOME</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+        
+    </script>
+</body>
+</html>

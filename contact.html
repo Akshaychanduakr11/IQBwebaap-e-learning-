@@ -1,0 +1,142 @@
+<!-- ================= contact.html ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="Assets/updates.css">
+</head>
+<body>
+
+<!-- ======== HERO ======== -->
+<header class="hero">
+  <h1>Contact Us</h1>
+  <p>We’d love to hear your feedback</p>
+</header>
+
+<!-- ======== FORM SECTION ======== -->
+<section class="feedback-section">
+  <div class="feedback-container fade-in">
+    <div class="feedback-content" id="feedbackFormContainer">
+      <h2>Submit your feedback!</h2>
+      <p>Your insights help us build a better <strong>Blueprint IQ</strong> platform for engineers.</p>
+      
+      <div class="input-group">
+        <input type="email" id="feedbackEmail" placeholder="Enter your E-mail address" required>
+      </div>
+      
+      <div class="input-group">
+        <textarea id="feedbackText" placeholder="Describe your experience or suggest a feature..."></textarea>
+      </div>
+      
+      <button class="submitFeedback" onclick="handleSubmit()">
+        <span>Send Feedback</span>
+        <div class="btn-hover-effect"></div>
+      </button>
+    </div>
+
+    <div class="success-message" id="successMessage" style="display: none;">
+      <div class="check-icon">✓</div>
+      <h2>Thank You!</h2>
+      <p>Your feedback has been transmitted to our engineering team.</p>
+      <button class="reset-btn" onclick="resetForm()">Submit Another</button>
+    </div>
+  </div>
+</section>
+
+<!-- ======== CREATORS SECTION ======== -->
+<section class="creators-section">
+  <h2>Creators</h2>
+
+  <div class="creator-grid">
+
+    <div class="creator-card">
+      <h3>Aditya Gwalwanshi</h3>
+      <p>Branch: Computer Science</p>
+      <p>Email: imaditya020@gmail.com</p>
+      <p>8767053840</p>
+    </div>
+
+    <div class="creator-card">
+      <h3>Akshay Chandurkar</h3>
+      <p>Branch: Computer Science</p>
+      <p>Email: akshaychandurkar11@gmail.com</p>
+      <p>7499747537</p>
+     
+    </div>
+
+    <div class="creator-card">
+      <h3>Harshal Deshmukh</h3>
+      <p>Branch: Computer Science</p>
+      <p>Email: harshald533@gmail.com</p>
+      <p>7066308685</p>
+    </div>
+
+    <div class="creator-card">
+      <h3>Neha Gadge</h3>
+      <p>Branch: Computer Science</p>
+      <p>Email: nehagadge477@gmail.com</p>
+    </div>
+
+  </div>
+</section>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } 
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+// Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyB8WyC3hnjxzXkX0hX6hZ_h5c7BNmuO_n8",
+  authDomain: "iqbwebapp.firebaseapp.com",
+  projectId: "iqbwebapp",
+  storageBucket: "iqbwebapp.firebasestorage.app",
+  messagingSenderId: "923239157693",
+  appId: "1:923239157693:web:1431a97a17f357fd8fccd4"
+};
+
+// Init
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// ===== HANDLE SUBMIT =====
+window.handleSubmit = async function () {
+  const email = document.getElementById("feedbackEmail").value;
+  const message = document.getElementById("feedbackText").value;
+
+  if (!email || !message) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  try {
+    await addDoc(collection(db, "feedbacks"), {
+      email: email,
+      message: message,
+      createdAt: serverTimestamp()
+    });
+
+    // UI change
+    document.getElementById("feedbackFormContainer").style.display = "none";
+    document.getElementById("successMessage").style.display = "block";
+
+  } catch (error) {
+    console.error(error);
+    alert("Error sending feedback");
+  }
+};
+
+// ===== RESET FORM =====
+window.resetForm = function () {
+  document.getElementById("feedbackEmail").value = "";
+  document.getElementById("feedbackText").value = "";
+
+  document.getElementById("feedbackFormContainer").style.display = "block";
+  document.getElementById("successMessage").style.display = "none";
+};
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
